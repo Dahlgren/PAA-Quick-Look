@@ -10,6 +10,14 @@
 		405C93541FF6D926005C4ADC /* GenerateThumbnailForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 405C93531FF6D926005C4ADC /* GenerateThumbnailForURL.c */; };
 		405C93561FF6D926005C4ADC /* GeneratePreviewForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 405C93551FF6D926005C4ADC /* GeneratePreviewForURL.c */; };
 		405C93581FF6D926005C4ADC /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 405C93571FF6D926005C4ADC /* main.c */; };
+		405C93841FF6DCE4005C4ADC /* paa2img.c in Sources */ = {isa = PBXBuildFile; fileRef = 405C936F1FF6DCE3005C4ADC /* paa2img.c */; };
+		405C938A1FF6DCE4005C4ADC /* paa2img.h in Headers */ = {isa = PBXBuildFile; fileRef = 405C93751FF6DCE4005C4ADC /* paa2img.h */; };
+		405C938D1FF6DCE4005C4ADC /* lzodefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 405C93791FF6DCE4005C4ADC /* lzodefs.h */; };
+		405C93901FF6DCE4005C4ADC /* lzoconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 405C937C1FF6DCE4005C4ADC /* lzoconf.h */; };
+		405C93921FF6DCE4005C4ADC /* minilzo.h in Headers */ = {isa = PBXBuildFile; fileRef = 405C937E1FF6DCE4005C4ADC /* minilzo.h */; };
+		405C93951FF6DCE4005C4ADC /* minilzo.c in Sources */ = {isa = PBXBuildFile; fileRef = 405C93811FF6DCE4005C4ADC /* minilzo.c */; };
+		405C93981FF6E05C005C4ADC /* PAAImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 405C93961FF6E05C005C4ADC /* PAAImage.h */; };
+		405C93991FF6E05C005C4ADC /* PAAImage.c in Sources */ = {isa = PBXBuildFile; fileRef = 405C93971FF6E05C005C4ADC /* PAAImage.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +26,16 @@
 		405C93551FF6D926005C4ADC /* GeneratePreviewForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GeneratePreviewForURL.c; sourceTree = "<group>"; };
 		405C93571FF6D926005C4ADC /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		405C93591FF6D926005C4ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		405C936F1FF6DCE3005C4ADC /* paa2img.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = paa2img.c; sourceTree = "<group>"; };
+		405C93751FF6DCE4005C4ADC /* paa2img.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paa2img.h; sourceTree = "<group>"; };
+		405C93791FF6DCE4005C4ADC /* lzodefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzodefs.h; sourceTree = "<group>"; };
+		405C937C1FF6DCE4005C4ADC /* lzoconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzoconf.h; sourceTree = "<group>"; };
+		405C937E1FF6DCE4005C4ADC /* minilzo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minilzo.h; sourceTree = "<group>"; };
+		405C937F1FF6DCE4005C4ADC /* README.LZO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.LZO; sourceTree = "<group>"; };
+		405C93811FF6DCE4005C4ADC /* minilzo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minilzo.c; sourceTree = "<group>"; };
+		405C93961FF6E05C005C4ADC /* PAAImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAAImage.h; sourceTree = "<group>"; };
+		405C93971FF6E05C005C4ADC /* PAAImage.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = PAAImage.c; sourceTree = "<group>"; };
+		405C93C01FF7069E005C4ADC /* install.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +53,8 @@
 			isa = PBXGroup;
 			children = (
 				405C93521FF6D926005C4ADC /* PAAQL */,
+				405C93641FF6DCA5005C4ADC /* armake */,
+				405C93BF1FF7069E005C4ADC /* scripts */,
 				405C93511FF6D926005C4ADC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,8 +74,40 @@
 				405C93551FF6D926005C4ADC /* GeneratePreviewForURL.c */,
 				405C93571FF6D926005C4ADC /* main.c */,
 				405C93591FF6D926005C4ADC /* Info.plist */,
+				405C93961FF6E05C005C4ADC /* PAAImage.h */,
+				405C93971FF6E05C005C4ADC /* PAAImage.c */,
 			);
 			path = PAAQL;
+			sourceTree = "<group>";
+		};
+		405C93641FF6DCA5005C4ADC /* armake */ = {
+			isa = PBXGroup;
+			children = (
+				405C93781FF6DCE4005C4ADC /* lib */,
+				405C936F1FF6DCE3005C4ADC /* paa2img.c */,
+				405C93751FF6DCE4005C4ADC /* paa2img.h */,
+			);
+			path = armake;
+			sourceTree = "<group>";
+		};
+		405C93781FF6DCE4005C4ADC /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				405C93791FF6DCE4005C4ADC /* lzodefs.h */,
+				405C937C1FF6DCE4005C4ADC /* lzoconf.h */,
+				405C937E1FF6DCE4005C4ADC /* minilzo.h */,
+				405C937F1FF6DCE4005C4ADC /* README.LZO */,
+				405C93811FF6DCE4005C4ADC /* minilzo.c */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		405C93BF1FF7069E005C4ADC /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				405C93C01FF7069E005C4ADC /* install.sh */,
+			);
+			path = scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +117,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405C938D1FF6DCE4005C4ADC /* lzodefs.h in Headers */,
+				405C93981FF6E05C005C4ADC /* PAAImage.h in Headers */,
+				405C938A1FF6DCE4005C4ADC /* paa2img.h in Headers */,
+				405C93901FF6DCE4005C4ADC /* lzoconf.h in Headers */,
+				405C93921FF6DCE4005C4ADC /* minilzo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +136,7 @@
 				405C934C1FF6D926005C4ADC /* Frameworks */,
 				405C934D1FF6D926005C4ADC /* Headers */,
 				405C934E1FF6D926005C4ADC /* Resources */,
+				405C939B1FF6E833005C4ADC /* Install Quick Look Plugin-in */,
 			);
 			buildRules = (
 			);
@@ -131,14 +189,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		405C939B1FF6E833005C4ADC /* Install Quick Look Plugin-in */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Install Quick Look Plugin-in";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh scripts/install.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		405C934B1FF6D926005C4ADC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405C93991FF6E05C005C4ADC /* PAAImage.c in Sources */,
 				405C93541FF6D926005C4ADC /* GenerateThumbnailForURL.c in Sources */,
 				405C93561FF6D926005C4ADC /* GeneratePreviewForURL.c in Sources */,
+				405C93951FF6DCE4005C4ADC /* minilzo.c in Sources */,
 				405C93581FF6D926005C4ADC /* main.c in Sources */,
+				405C93841FF6DCE4005C4ADC /* paa2img.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

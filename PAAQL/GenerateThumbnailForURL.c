@@ -20,6 +20,8 @@
 #include <CoreServices/CoreServices.h>
 #include <QuickLook/QuickLook.h>
 
+#include "PAAImage.h"
+
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize);
 void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbnail);
 
@@ -31,7 +33,21 @@ void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbn
 
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize)
 {
-    // To complete your generator please implement the function GenerateThumbnailForURL in GenerateThumbnailForURL.c
+    CFStringRef urlPath = CFURLCopyPath(url);
+    const char* path = CFStringGetCStringPtr(urlPath,kCFStringEncodingUTF8);
+    CFRelease(urlPath);
+    
+    if (path) {
+        CGImageRef image = CreateCGImageFromPAA(path);
+        
+        if (!image) {
+            return 1;
+        }
+        
+        QLThumbnailRequestSetImage(thumbnail, image, nil);
+        CGImageRelease(image);
+    }
+    
     return noErr;
 }
 
